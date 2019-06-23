@@ -16,3 +16,10 @@
 5. you can test all end points using post man etc.
 6. Save that token given the login api response so that could be used for api authentication.
 7. No token required for Register and login apis.
+8. I used database only for user register and login.
+
+
+
+Project can be downloaded for the following github url.
+
+https://github.com/khalilrehman36/transaction_api

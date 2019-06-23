@@ -25,7 +25,7 @@ class TransactionController extends Controller
 
         if (!empty($data) && $data->count()) {
             foreach ($data as $key => $value) {
-                $response[] = [
+                $customerData[] = [
                     'start_date' => $value['start_date'],
                     'end_date' => $value['end_date'],
                     'first_name' => $value['first_name'],
@@ -37,13 +37,21 @@ class TransactionController extends Controller
                     'city' => $value['city'],
                     'country' => $value['country'],
                     'postcode' => $value['postcode'],
+                ];
+
+                $trasactionData[] = [
                     'product_name' => $value['product_name'],
                     'cost' => $value['cost'],
                     'currencyusdgbp' => $value['currencyusdgbp'],
                     'transaction_date' => $value['transaction_date'],
                 ];
             }
+
+            $response = array(
+                'customerData' => $customerData,
+                'trasactionData' =>  $trasactionData
+            );
         }
-        return json_encode($data);
+        return $response;
     }
 }
